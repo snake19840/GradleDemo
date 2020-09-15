@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mainPage</title>
+</head>
+<body>
+<h1>这是主页</h1>
+
+
+<form  th:action="@{find}"  method="post">
+   请输入查询人姓名： <input type="text" name="username" ／>
+    <input type="submit" value="查询" ／>
+</form>
+<div><span th:text="${password}"></span></div>
+<hr/>
+
+<form  th:action="@{savetest}"  method="post">
+    请输入人姓名： <input type="text" name="username" ／>
+    请输入密码： <input type="text" name="password" ／>
+    <input type="submit" value="提交" ／>
+</form>
+
+<div><span th:text="${status}"></span></div>
+<hr/>
+
+<h1>Search</h1>
+<form  th:action="@{search1}"  method="post">
+    请输入人姓名： <input type="text" name="username" ／>
+    <input type="submit" value="提交" ／>
+</form>
+
+<h1>Search2</h1>
+<form  th:action="@{search2}"  method="post">
+    请输入姓名： <input type="text" name="username" ／>
+    请输入密码： <input type="text" name="password" ／>
+    <input type="submit" value="提交" ／>
+</form>
+
+<h1>Search3</h1>
+<form  th:action="@{search3}"  method="post">
+    请输入姓名： <input type="text" name="username" ／>
+
+    <input type="submit" value="提交" ／>
+</form>
+
+<h1>Search4</h1>
+<form  th:action="@{search4}"  method="post">
+    请输入姓名： <input type="text" name="username" ／>
+
+    <input type="submit" value="提交" ／>
+</form>
+
+<h1>Search5</h1>
+<form  th:action="@{search5}"  method="post">
+    请输入姓名： <input type="text" name="username" ／>
+
+    <input type="submit" value="提交" ／>
+</form>
+
+<h1>Search6</h1>
+<form  th:action="@{search6}"  method="post">
+    请输入姓名： <input type="text" name="username" ／>
+    请输入ID： <input type="text" name="id" ／>
+    <input type="submit" value="修改" ／>
+</form>
+
+
+<table>
+    <tr th:each="user :${list}">
+        <td th:text="${user}"></td>
+    </tr>
+</table>
+<div><span th:text="${success}"></span></div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+
+<table border="1" align="center" width="50%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+
+    <tr th:each="user : ${list}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}">3</td>
+    </tr>
+
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>1</td>-->
+<!--        <td>1</td>-->
+<!--    </tr>-->
+
+</table>
+
+<hr/>
+<div th:text="${#strings.contains('name','na')}"></div>
+<div th:text="${#dates.format(datekey)}"></div>
+<div th:text="${#dates.format(datekey,'yyyy-MM-dd')}"></div>
+
+<div th:text="${#dates.year(datekey)}"></div>
+<div th:text="${#dates.month(datekey)}"></div>
+<div th:text="${#dates.day(datekey)}"></div>
+
+<div>
+    <span th:if="${sex} == '男'">
+        姓别:男
+    </span>
+    <span th:if="${sex} == '女'">
+        姓别:女
+    </span>
+</div>
+
+<hr/>
+<div th:switch="${ID}">
+    <span th:case="1">1111</span>
+    <span th:case="2">2222</span>
+    <span th:case="3">3333</span>
+</div>
+
+<hr/>
+<table border="1" width="50%">
+    <tr th:each="maps : ${map}">
+        <td th:text="${maps}"></td>
+    </tr>
+</table>
+
+<hr/>
+<table border="1" width="50%">
+    <tr th:each="maps : ${map}">
+        <td th:each="entry:${maps}" th:text="${entry.key}" ></td>
+        <td th:each="entry:${maps}" th:text="${entry.value}" ></td>
+    </tr>
+</table>
+
+</body>
+</html>

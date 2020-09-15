@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mainPage</title>
+</head>
+<body>
+<h1>这是主页</h1>
+
+<h1>Search1</h1>
+<form  th:action="@{search1}"  method="post">
+    <input type="submit" value="ID排序" ／>
+</form>
+
+<h1>Search2</h1>
+<form  th:action="@{search2}"  method="post">
+   请输入开始页： <input type="text" name="page" ／>
+    请输入每页条数： <input type="text" name="size" ／>
+    <input type="submit" value="分页" ／>
+</form>
+
+<h1>Search3</h1>
+<form  th:action="@{search3}"  method="post">
+    请输入开始页： <input type="text" name="page" ／>
+    请输入每页条数： <input type="text" name="size" ／>
+    请输入排序对象： <input type="text" name="sortObj" ／>
+    请输入是否正向排序： <input type="text" name="dir" ／>
+
+    <input type="submit" value="分页" ／>
+</form>
+
+
+<table>
+    <tr th:each="user :${list}">
+        <td th:text="${user}"></td>
+    </tr>
+</table>
+<div><span th:text="${success}"></span></div>
+<div><span th:text="${listItems}"></span></div>
+<div><span th:text="${listPages}"></span></div>
+
+</body>
+</html>

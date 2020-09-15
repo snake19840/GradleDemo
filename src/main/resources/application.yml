@@ -1,0 +1,55 @@
+server:
+  port: 8088
+
+
+spring:
+  servlet:
+    multipart:
+      max-request-size: 200MB
+      max-file-size: 200MB
+
+
+  #thymeleaf start
+  #spring.thymeleaf.mode=HTML5
+  #spring.thymeleaf.encoding=UTF-8
+  #spring.thymeleaf.content-type=text/html
+  #开发时关闭缓存,不然没法看到实时页面
+  #spring.thymeleaf.cache=false
+  #static 文件夹下的静态文件访问路径
+  #spring.mvc.static-path-pattern=/**
+
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+    prefix: /WEB-INF/View/
+    suffix: .html
+
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:23306/dockertest?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: test
+    password: test
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#  jooq:
+#    sql-dialect: org.hibernate.dialect.MYSQL5Dialect
+
+#
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    jdbc-url: jdbc:oracle:thin:@134.101.168.33:1521:orcl3
+#    username: c##test
+#    password: test
+
+#thymeleaf end

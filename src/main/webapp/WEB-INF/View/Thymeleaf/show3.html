@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf-url</title>
+</head>
+<body>
+<a href="https://www.baidu.com">正常跳转到百度</a><br/>
+<a th:href="@{https://www.baidu.com}">thymeleaf跳转到百度</a>
+<hr/>
+
+<a th:href="@{/index}">thymeleaf－相对路径</a>
+<hr/>
+
+<a th:href="@{~/}">thymeleaf－相对服务器的根</a>
+
+<hr/>
+
+<a th:href="@{index(id=1,name=张三)}">thymeleaf－路径传递参数</a>
+</body>
+</html>
