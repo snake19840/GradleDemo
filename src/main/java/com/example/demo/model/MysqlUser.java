@@ -17,6 +17,11 @@ public class MysqlUser implements Serializable {
     @Column(name = "password")
     private String password;
 
+    @ManyToOne
+    // @JoinColumn:维护外键
+    @JoinColumn(name="roles_id")
+    private Roles roles;
+
     public MysqlUser() {
         super();
     }
@@ -33,6 +38,14 @@ public class MysqlUser implements Serializable {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public Roles getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Roles roles) {
+        this.roles = roles;
     }
 
     public Long getId() {
