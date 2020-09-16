@@ -9,26 +9,29 @@
 
 <h1>Search1</h1>
 <form  th:action="@{search1}"  method="post">
-    <input type="submit" value="ID排序" ／>
+    请输入查询对象： <input type="text" name="sortObj" ／>
+    请输入查询信息： <input type="text" name="username" ／>
+    <input type="submit" value="查询" ／>
 </form>
 
-<h1>Search2</h1>
-<form  th:action="@{search2}"  method="post">
-   请输入开始页： <input type="text" name="page" ／>
-    请输入每页条数： <input type="text" name="size" ／>
-    <input type="submit" value="分页" ／>
-</form>
 
 <h1>Search3</h1>
 <form  th:action="@{search3}"  method="post">
-    请输入开始页： <input type="text" name="page" ／>
-    请输入每页条数： <input type="text" name="size" ／>
-    请输入排序对象： <input type="text" name="sortObj" ／>
-    请输入是否正向排序： <input type="text" name="dir" ／>
 
-    <input type="submit" value="分页" ／>
+    请输入查询姓名： <input type="text" name="username" ／>
+    请输入查询密码： <input type="text" name="password" ／>
+
+    <input type="submit" value="查询" ／>
 </form>
 
+<h1>Search4</h1>
+<form  th:action="@{search4}"  method="post">
+    是否倒序： <input type="text" name="dir" ／>
+    请输入查询姓名： <input type="text" name="username" ／>
+    请输入查询密码： <input type="text" name="password" ／>
+
+    <input type="submit" value="查询" ／>
+</form>
 
 <table>
     <tr th:each="user :${list}">
@@ -36,8 +39,8 @@
     </tr>
 </table>
 <div><span th:text="${success}"></span></div>
-<div><span th:text="${listItems}"></span></div>
-<div><span th:text="${listPages}"></span></div>
+<!--<div><span th:text="${listItems}"></span></div>-->
+<!--<div><span th:text="${listPages}"></span></div>-->
 
 </body>
 </html>
