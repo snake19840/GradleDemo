@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mainPage</title>
+</head>
+<body>
+<h1>这是主页</h1>
+
+<h1>createOneToMany</h1>
+<form th:action="@{save}" method="post">
+    请输入用户: <input  type="text" name="username">
+    请输入密码: <input  type="text" name="password">
+    请输入角色: <input  type="text" name="rolename">
+
+    <input  type="submit" value="一对多关系创建">
+</form>
+<hr/>
+<h1>searchOneToMany</h1>
+<form th:action="@{searchOneToMany}" method="post">
+    请输入查询用户: <input  type="text" name="username">
+
+    <input  type="submit" value="一对多关系查询">
+</form>
+
+<hr/>
+<h1>createManyToMany</h1>
+<form th:action="@{createManyToMany}" method="post">
+    请输入角色名: <input  type="text" name="rolename">
+
+    <input  type="submit" value="多对多关系创建">
+</form>
+
+
+<hr/>
+<h1>searchManyToMany</h1>
+<form th:action="@{searchManyToMany}" method="post">
+    请输入角色名: <input  type="text" name="rolename">
+
+    <input  type="submit" value="查询">
+</form>
+
+
+<table>
+    <tr th:each="user :${list}">
+        <td th:text="${user}"></td>
+    </tr>
+</table>
+
+<table>
+    <tr >
+        <td th:text="${map}"></td>
+
+    </tr>
+</table>
+<div><span th:text="${success}"></span></div>
+</body>
+</html>

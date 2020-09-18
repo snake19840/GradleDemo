@@ -1,17 +1,18 @@
 package com.example.demo;
 
-import com.example.demo.other.Factorial;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = {})
 
 public class FactorialTest {
-    @Test
-    void testFact() {
-        assertEquals(1, Factorial.fact(1));
-        assertEquals(2, Factorial.fact(2));
-        assertEquals(6, Factorial.fact(3));
-        assertEquals(3628800, Factorial.fact(10));
-        assertEquals(2432902008176640000L, Factorial.fact(20));
+   @Test
+   public void testFact() {
+        System.out.println("wqwqwq");
     }
 }

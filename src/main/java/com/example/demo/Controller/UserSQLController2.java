@@ -71,7 +71,7 @@ private UserRepositoryCrudRepository userRepositoryCrudRepository;
     @RequestMapping("/search11")
 
     public String deleteByID(MysqlUser user,Model model){
-        String status="";
+            String status="";
 try {
     this.userRepositoryCrudRepository.deleteById(user.getId());
     status="删除成功";

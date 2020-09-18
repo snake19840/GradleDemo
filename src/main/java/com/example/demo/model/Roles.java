@@ -22,6 +22,21 @@ public class Roles {
     @OneToMany(mappedBy = "roles")
     private Set<MysqlUser> mysqlUsers=new HashSet<>();
 
+    //fetch = FetchType.EAGER: 查询时加入立即加载或是配置长时间的session
+    @ManyToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    //@JoinTable : 映射中间表
+    //joinColumns: 当前表中的主键所关联的中间表的外键
+    @JoinTable(name = "t_roles_menus",joinColumns = @JoinColumn(name = "roles_id"),inverseJoinColumns = @JoinColumn(name = "menus_id"))
+    private  Set<Menus> menus=new HashSet<>();
+
+
+    public Set<Menus> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(Set<Menus> menus) {
+        this.menus = menus;
+    }
 
     public Integer getRoleid() {
         return roleid;
@@ -62,6 +77,8 @@ public class Roles {
     public void setAddress(String address) {
         this.address = address;
     }
+
+
 
     @Override
     public String toString() {

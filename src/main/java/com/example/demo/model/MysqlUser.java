@@ -3,6 +3,7 @@ package com.example.demo.model;
 import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -13,11 +14,12 @@ public class MysqlUser implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "username")
+    @NotBlank
     private String username;
     @Column(name = "password")
     private String password;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     // @JoinColumn:维护外键
     @JoinColumn(name="roles_id")
     private Roles roles;

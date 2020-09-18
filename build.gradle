@@ -30,6 +30,12 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
     compile group: 'com.alibaba' ,name: 'druid' ,version: '1.0.9'
 
+    //数据校验
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.21.Final'
+    compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.5.Final'
+
+
+
 //    compile group: 'org.dromara', name: 'myth-spring-boot-start-parent', version: '2.0.0-RELEASE'
 
 
@@ -51,19 +57,21 @@ dependencies {
 
 //    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '2.3.3.RELEASE'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'junit', module: 'junit' //by both name and group
-    }
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.2.0"
-    testCompile "org.junit.jupiter:junit-jupiter-params:5.2.0"
-    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.2.0"
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.2'
+//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+//        exclude group: 'junit', module: 'junit' //by both name and group
+//        exclude group: 'junit', name: 'junit', version: '4.13'
+//    }
 
+    testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.7.0'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '5.2.9.RELEASE'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.3.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.13'
 
 }
 
 test {
     useJUnitPlatform()
+
 }
 
 
